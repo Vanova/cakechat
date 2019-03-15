@@ -656,7 +656,7 @@ class CakeChatModel(object):
 
         laconic_logger.warning('\nShapes-mismatched params (saved -> current):')
         for var_name, default_shape, saved_shape in mismatched_vars:
-            laconic_logger.warning('\t{0:<40} {1:<12} -> {2:<12}'.format(var_name, saved_shape, default_shape))
+            laconic_logger.warning('\t{0:<40} {1:<12} -> {2:<12}'.format(var_name, str(saved_shape), str(default_shape)))
 
         laconic_logger.warning('\nUnused saved params:')
         for var_name in saved_var_name_to_var:
