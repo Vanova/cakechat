@@ -47,7 +47,7 @@ MIN_WORD_FREQ = 1  # Minimum frequency of a word to be used in word2vec pre-calc
 
 # condition inputs. We use five major emotions to condition our model's predictions
 EMOTIONS_TYPES = create_namedtuple_instance(
-    'EMOTIONS_TYPES', neutral='neutral', anger='anger', joy='joy', fear='fear', sadness='sadness')
+    'EMOTIONS_TYPES', neutral='neutral', anger='anger', joy='joy', fear='fear', disgust='disgust')
 DEFAULT_CONDITION = EMOTIONS_TYPES.neutral  # Default condition to be used during the prediction (if not specified)
 CONDITION_EMBEDDING_DIMENSION = 128  # Conditions embedding layer dimension to be trained.
 
@@ -61,14 +61,14 @@ DENSE_DROPOUT_RATIO = 0.2  # Use dropout with the given ratio before decoder's o
 INPUT_SEQUENCE_LENGTH = 30  # Input sequence length for the model during the training;
 INPUT_CONTEXT_SIZE = 3  # Maximum depth of the conversational history to be used in encoder (at least 1)
 OUTPUT_SEQUENCE_LENGTH = 32  # Output sequence length. Better to keep as INPUT_SEQUENCE_LENGTH+2 for start/end tokens
-BATCH_SIZE = 32 #192  # Default batch size which fits into 8GB of GPU memory
+BATCH_SIZE = 64 #192  # Default batch size which fits into 8GB of GPU memory
 SHUFFLE_TRAINING_BATCHES = True  # Shuffle training batches in the dataset each epoch
-EPOCHS_NUM = 200  # Total epochs num
+EPOCHS_NUM = 40  # Total epochs num
 GRAD_CLIP = 5.0  # Gradient clipping passed into theano.gradient.grad_clip()
-LEARNING_RATE = 1.0  # Learning rate for the chosen optimizer (currently using Adadelta, see model.py)
+LEARNING_RATE = 0.1  # Learning rate for the chosen optimizer (currently using Adadelta, see model.py)
 
 # model params
-NN_MODEL_PREFIX = 'cakechat_v1.4'  # Specify prefix to be prepended to model's name
+NN_MODEL_PREFIX = 'cakechat_v1.3'  # Specify prefix to be prepended to model's name
 
 # predictions params
 MAX_PREDICTIONS_LENGTH = 40  # Max. number of tokens which can be generated on the prediction step
@@ -101,7 +101,7 @@ SCREEN_LOG_NUM_TEST_LINES = 10  # Number of first test lines to use when logging
 SCREEN_LOG_FREQUENCY_PER_BATCHES = 30#500  # How many batches to train until next logging of output on screen
 LOG_TO_TB_FREQUENCY_PER_BATCHES = 30#500  # How many batches to train until next metrics computed for TensorBoard
 LOG_TO_FILE_FREQUENCY_PER_BATCHES = 30#2500  # How many batches to train until next logging of all the output into file
-SAVE_MODEL_FREQUENCY_PER_BATCHES = 300#2500  # How many batches to train until next logging of all the output into file
+SAVE_MODEL_FREQUENCY_PER_BATCHES = 25#2500  # How many batches to train until next logging of all the output into file
 AVG_LOSS_DECAY = 0.99  # Decay for the averaging the loss
 
 # Use reduced sizes for input/output sequences, hidden layers and datasets sizes for the 'Developer Mode'
