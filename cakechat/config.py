@@ -65,7 +65,7 @@ BATCH_SIZE = 64 #192  # Default batch size which fits into 8GB of GPU memory
 SHUFFLE_TRAINING_BATCHES = True  # Shuffle training batches in the dataset each epoch
 EPOCHS_NUM = 40  # Total epochs num
 GRAD_CLIP = 5.0  # Gradient clipping passed into theano.gradient.grad_clip()
-LEARNING_RATE = 0.1  # Learning rate for the chosen optimizer (currently using Adadelta, see model.py)
+LEARNING_RATE = 1.0  # Learning rate for the chosen optimizer (currently using Adadelta, see model.py)
 
 # model params
 NN_MODEL_PREFIX = 'cakechat_v1.3'  # Specify prefix to be prepended to model's name
