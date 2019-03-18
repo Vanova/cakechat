@@ -63,7 +63,7 @@ INPUT_CONTEXT_SIZE = 3  # Maximum depth of the conversational history to be used
 OUTPUT_SEQUENCE_LENGTH = 32  # Output sequence length. Better to keep as INPUT_SEQUENCE_LENGTH+2 for start/end tokens
 BATCH_SIZE = 64 #192  # Default batch size which fits into 8GB of GPU memory
 SHUFFLE_TRAINING_BATCHES = True  # Shuffle training batches in the dataset each epoch
-EPOCHS_NUM = 40  # Total epochs num
+EPOCHS_NUM = 15  # Total epochs num
 GRAD_CLIP = 5.0  # Gradient clipping passed into theano.gradient.grad_clip()
 LEARNING_RATE = 1.0  # Learning rate for the chosen optimizer (currently using Adadelta, see model.py)
 
@@ -98,10 +98,10 @@ MMI_REVERSE_MODEL_SCORE_WEIGHT = 1.0  # Weight for MMI reranking reverse-model s
 # Logging params
 LOG_CANDIDATES_NUM = 10  # Number of candidates to be printed to output during the logging
 SCREEN_LOG_NUM_TEST_LINES = 10  # Number of first test lines to use when logging outputs on screen
-SCREEN_LOG_FREQUENCY_PER_BATCHES = 30#500  # How many batches to train until next logging of output on screen
-LOG_TO_TB_FREQUENCY_PER_BATCHES = 30#500  # How many batches to train until next metrics computed for TensorBoard
-LOG_TO_FILE_FREQUENCY_PER_BATCHES = 30#2500  # How many batches to train until next logging of all the output into file
-SAVE_MODEL_FREQUENCY_PER_BATCHES = 25#2500  # How many batches to train until next logging of all the output into file
+SCREEN_LOG_FREQUENCY_PER_BATCHES = 100#500  # How many batches to train until next logging of output on screen
+LOG_TO_TB_FREQUENCY_PER_BATCHES = 100#500  # How many batches to train until next metrics computed for TensorBoard
+LOG_TO_FILE_FREQUENCY_PER_BATCHES = 200#2500  # How many batches to train until next logging of all the output into file
+SAVE_MODEL_FREQUENCY_PER_BATCHES = 100#2500  # How many batches to train until next logging of all the output into file
 AVG_LOSS_DECAY = 0.99  # Decay for the averaging the loss
 
 # Use reduced sizes for input/output sequences, hidden layers and datasets sizes for the 'Developer Mode'
