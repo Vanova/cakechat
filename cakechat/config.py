@@ -46,9 +46,13 @@ USE_SKIP_GRAM = True  # Use skip-gram word2vec mode. When False, CBOW is used
 MIN_WORD_FREQ = 1  # Minimum frequency of a word to be used in word2vec pre-calculation
 
 # condition inputs. We use five major emotions to condition our model's predictions
+# original emotions
+#EMOTIONS_TYPES = create_namedtuple_instance(
+#    'EMOTIONS_TYPES', neutral='neutral', anger='anger', joy='joy', fear='fear', disgust='disgust')
+# TODO we have emotions {"0": "neutral", "1": "anger", "2": "joy", "3": "laugh", "4": "disgust"}
 EMOTIONS_TYPES = create_namedtuple_instance(
-    'EMOTIONS_TYPES', neutral='neutral', anger='anger', joy='joy', fear='fear', disgust='disgust')
-DEFAULT_CONDITION = EMOTIONS_TYPES.neutral  # Default condition to be used during the prediction (if not specified)
+    'EMOTIONS_TYPES', neutral='neutral', anger='anger', joy='joy', laugh='laugh', disgust='disgust')
+DEFAULT_CONDITION = EMOTIONS_TYPES.joy  # Default condition to be used during the prediction (if not specified)
 CONDITION_EMBEDDING_DIMENSION = 128  # Conditions embedding layer dimension to be trained.
 
 # NN architecture params
